@@ -1,3 +1,4 @@
-﻿  1002.c
-C:\Users\이재한\Desktop\이재한\백준 git\백준\백준\1002.c(13,25): warning C4013: 'malloc'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  백준.vcxproj -> C:\Users\이재한\Desktop\이재한\백준 git\백준\Debug\백준.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: 중간 디렉터리(Debug\)에 다른 프로젝트(백준.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  1002.c
+C:\Users\이재한\Desktop\이재한\백준알고리즘\1002\백준\1002.c(14,25): warning C4013: 'malloc'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  백준.vcxproj -> C:\Users\이재한\Desktop\이재한\백준알고리즘\백준-알고리즘\Debug\1002(220203.exe

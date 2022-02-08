@@ -18,5 +18,8 @@
     <ClCompile Include="보석줍기.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="보석줍기(new).c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

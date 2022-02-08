@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+/*#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 int summax(int num[], int start,int finish);
 int sum = 0;
@@ -39,14 +39,12 @@ int main()
 			max[i][j] = summax(tresure,i,j);
 		}
 	}
-	/*
 	for (int i = 0; i < N; i++)
 	{
 		for (int j = 0; j < N; j++)
 			printf(" %2d ", max[i][j]);
 		printf("\n");
 	}
-	*/
 	for (int i = 0; i < N; i++)
 	{
 		for (int j = 0; j < N; j++)
@@ -79,3 +77,4 @@ int summax(int num[],int start,int finish)
 	}
 	return sum;
 }
+*/
