@@ -1,0 +1,5 @@
+﻿  1157.cpp
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\1157(220313)\1157.cpp(17,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\1157(220313)\1157.cpp(22,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\1157(220313)\1157.cpp(14,9): warning C4101: 'num' :참조되지 않은 지역 변수입니다.
+  1157(220313).vcxproj -> C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\백준-알고리즘\Debug\1157(220313).exe
