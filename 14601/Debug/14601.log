@@ -1,0 +1,9 @@
+﻿  14601.cpp
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\14601\14601.cpp(42,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\14601\14601.cpp(44,27): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\14601\14601.cpp(46,19): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\14601\14601.cpp(54,15): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\14601\14601.cpp(185,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\14601\14601.cpp(187,27): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\14601\14601.cpp(153): warning C4715: 'hole': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  14601.vcxproj -> C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\백준-알고리즘\Debug\14601.exe
