@@ -1,2 +1,5 @@
-﻿  4963.cpp
-  4963.vcxproj -> C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\백준-알고리즘\Debug\4963.exe
+﻿  14501.cpp
+  4963.cpp
+  코드를 생성하고 있습니다...
+4963.obj : error LNK2005: _main이(가) 14501.obj에 이미 정의되어 있습니다.
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\백준-알고리즘\Debug\4963.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
