@@ -49,6 +49,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2839(설탕배달)", "..\28
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DP", "..\DP\DP.vcxproj", "{2C63AFB8-BA21-4B44-AED2-45DD8A7E9B7F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tree", "..\Tree\Tree.vcxproj", "{6C8A9C29-A7CD-456A-AE08-4B01D2AA51ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -241,6 +243,14 @@ Global
 		{2C63AFB8-BA21-4B44-AED2-45DD8A7E9B7F}.Release|x64.Build.0 = Release|x64
 		{2C63AFB8-BA21-4B44-AED2-45DD8A7E9B7F}.Release|x86.ActiveCfg = Release|Win32
 		{2C63AFB8-BA21-4B44-AED2-45DD8A7E9B7F}.Release|x86.Build.0 = Release|Win32
+		{6C8A9C29-A7CD-456A-AE08-4B01D2AA51ED}.Debug|x64.ActiveCfg = Debug|x64
+		{6C8A9C29-A7CD-456A-AE08-4B01D2AA51ED}.Debug|x64.Build.0 = Debug|x64
+		{6C8A9C29-A7CD-456A-AE08-4B01D2AA51ED}.Debug|x86.ActiveCfg = Debug|Win32
+		{6C8A9C29-A7CD-456A-AE08-4B01D2AA51ED}.Debug|x86.Build.0 = Debug|Win32
+		{6C8A9C29-A7CD-456A-AE08-4B01D2AA51ED}.Release|x64.ActiveCfg = Release|x64
+		{6C8A9C29-A7CD-456A-AE08-4B01D2AA51ED}.Release|x64.Build.0 = Release|x64
+		{6C8A9C29-A7CD-456A-AE08-4B01D2AA51ED}.Release|x86.ActiveCfg = Release|Win32
+		{6C8A9C29-A7CD-456A-AE08-4B01D2AA51ED}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
