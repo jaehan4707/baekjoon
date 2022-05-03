@@ -1,78 +1,70 @@
+//BFS는 너비우선탐색 DFS는 깊이 우선탐색
 #include <iostream>
 #include <vector>
 #include <stack>
 #include <queue>
+
 using namespace std;
-void bfs(int v, vector<vector<int>>& node);
-void dfs(int v, vector<int> visit, vector<vector<int>>& node);
-stack<int> s;
-queue<int> q;
-int n, m, V; // n은 꼭지점 개수 m은 간선 개수 v는 출발점
+int n, m, start,s,f;
+int idx = 99999;
+stack<int>S;
+queue<int>Q;
+void dfs(vector<vector<int>>& ary, int begin, vector<int>& visit);
+void bfs(vector<vector<int>>& ary, int begin, vector<int>& visit);
 int main()
 {
-
-    cin >> n >> m >> V;
-    vector<vector<int>> node(m, vector<int>(m, 0));
-    int start, end;
-    vector<int> visit(m);
-    for (int i = 0; i < m; i++)
-    {
-        cin >> start >> end;
-        node[start][end] = 1;
-        node[end][start] = 1;
-    }
-    // bfs짜기
-    dfs(V, visit, node);
-    cout << "\n";
-    bfs(V, node);
+	cin >> n >> m >> start;
+	vector<vector<int>>graph(n+1, vector<int>(n+1, 0));
+	vector<int>visit(n + 1, 0);
+	for (int i = 0; i < m; i++)
+	{
+		cin >> s >> f;
+		graph[s][f] = 1;
+		graph[f][s] = 1;
+	}
+	dfs(graph, start,visit);
+	cout << endl;
+	for (int i = 0; i < visit.size(); i++)
+	{
+		visit[i] = 0;
+	}
+	bfs(graph, start, visit);
 }
-void bfs(int v, vector<vector<int>>& node)
+void dfs(vector<vector<int>>&ary,int begin, vector<int>&visit)
 {
-    q.push(v); //첫 노드를 넣어준다.
-    vector<int> visit(m);
-    visit[v] = 1; //방문했다는 표시
-
-    int begin;
-    while (!q.empty()) // queue가 비엇으면 끝
-    {                  //방문안했고 node[][]값이 1인것을 push해줘야함.
-        begin = q.front();
-        cout << q.front() << " ";
-        q.pop();
-        for (int i = 0; i < m; i++)
-        {
-            if (visit[i] == 0 && node[begin][i] == 1) // begin에서 시작해서 도착점을 쭈욱 탐색
-            {
-                q.push(i);
-                visit[i] = 1;
-            }
-        }
-    }
+	visit[begin] = 1;
+	S.push(begin);
+	while (S.empty() == 0)
+	{
+		int begin = S.top();
+		cout << begin << " ";
+		S.pop();
+		for (int i = 1; i <= n; i++)
+		{
+			if (ary[begin][i] == 1 && visit[i] == 0)
+			{
+				visit[i] = 1;
+				dfs(ary, i, visit);
+			}
+		}
+	}
 }
-void dfs(int V, vector<int> visit, vector<vector<int>>& node)
+void bfs(vector<vector<int>>& ary, int begin, vector<int>& visit)
 {
-    // 초기화
-    // 시작 (방문 표시, stack 추가)
-    s.push(V);
-    int top = s.top();
-    s.pop();
-    while (!s.empty())
-    {
-        if (visit[top])
-            continue;
-
-        // ?노드 방문 표시
-        visit[top] = true;
-        cout << top << " ";
-
-        for (int i = 0; i < m; i++)
-        {
-            if (visit[i] == 0 && node[top][i])
-            {
-                s.push(i);
-                top = s.top();
-                s.pop();
-            }
-        }
-    }
+	Q.push(begin);
+	visit[begin] = 1;
+	while (Q.empty()==0)
+	{
+		int begin= Q.front(); // 출발점을 begin으로 잡는다.
+		cout << begin << " ";
+		Q.pop();
+		for (int i = 1; i <= n; i++)
+		{
+			if (ary[begin][i] == 1 && visit[i] == 0)
+			{
+				visit[i] = 1;
+				Q.push(i);
+			}
+		}
+	}
 }
-
