@@ -139,8 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="메뉴리뉴얼(LV2).cpp" />
-    <ClCompile Include="오픈채팅방.cpp" />
+    <ClCompile Include="124나라의숫자.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="메뉴리뉴얼(LV2).cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="오픈채팅방.cpp">
+    <ClCompile Include="124나라의숫자.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
