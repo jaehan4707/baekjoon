@@ -1,9 +1,4 @@
-﻿  소스.cpp
-C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\Programmers\소스.cpp(13,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\Programmers\소스.cpp(27,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\Programmers\소스.cpp(30,27): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\Programmers\소스.cpp(44,27): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\Programmers\소스.cpp(46,31): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\Programmers\소스.cpp(84,27): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\Programmers\소스.cpp(86,35): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+﻿  행렬회전시키기.cpp
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\Programmers\행렬회전시키기.cpp(27,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\Programmers\행렬회전시키기.cpp(79,27): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   Programmers.vcxproj -> C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\백준-알고리즘\Debug\Programmers.exe
