@@ -48,7 +48,6 @@ void Eratos(int n, int m)
             }
         }
     }
-
     for (int i = m; i <= n; i++)
     {
         if (PrimeArray[i])
