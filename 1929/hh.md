@@ -24,7 +24,8 @@
 
 **21인 여행경로가 무조건 있다는 뜻은 아니다. 하지만 이 21보다 더 짧은 경로는 있을 수 없다는 뜻이다.**
 
-[##_Image|kage@uoEm2/btrDoUJeaw3/tm6hOJXqDhk00PdiZtkOg0/img.png|CDM|1.3|{"originWidth":387,"originHeight":323,"style":"alignLeft"}_##]
+![img1 daumcdn](https://user-images.githubusercontent.com/99114456/172857602-a74d748a-bb21-4fdc-acaf-7f233c67a54d.png)
+
 
 V1에서 출발해서 V2를 방문한 경우
 
@@ -43,7 +44,8 @@ V1에서 출발해서 V2를 방문한 경우
 
 아래 그림은 각 방문한 정점마다 bound값을 구한 상태이다.
 
-[##_Image|kage@beQ44i/btrDEjBGQ7c/LpPku21cD65Tu4SxNiUX1k/img.png|CDM|1.3|{"originWidth":1121,"originHeight":561,"style":"alignLeft"}_##]
+![img1 daumcdn](https://user-images.githubusercontent.com/99114456/172857987-3ee73c02-0288-46b4-9456-2621bfc938c8.png)
+
 
 1.  root를 방문한다.
     1.  bound값을 계산하면 21이 된다.
