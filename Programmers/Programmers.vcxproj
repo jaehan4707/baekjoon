@@ -22,6 +22,7 @@
     <ClCompile Include="k번째수.cpp" />
     <ClCompile Include="가장큰수.cpp" />
     <ClCompile Include="신고결과받기.cpp" />
+    <ClCompile Include="없는숫자더하기.cpp" />
     <ClCompile Include="튜플.cpp" />
     <ClCompile Include="행렬회전시키기.cpp" />
   </ItemGroup>
