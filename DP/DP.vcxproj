@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="1003(피보나치함수).cpp" />
+    <ClCompile Include="12865.cpp" />
     <ClCompile Include="2579(계단오르기).cpp" />
     <ClCompile Include="9095(1,2,3더하기).cpp" />
   </ItemGroup>
