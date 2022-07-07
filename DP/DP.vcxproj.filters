@@ -30,5 +30,8 @@
     <ClCompile Include="11503(증가하는수열길이구하기).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="11052.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
