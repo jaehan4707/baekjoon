@@ -143,6 +143,7 @@
     <ClCompile Include="11052.cpp" />
     <ClCompile Include="11503(증가하는수열길이구하기).cpp" />
     <ClCompile Include="12865.cpp" />
+    <ClCompile Include="1577.cpp" />
     <ClCompile Include="2579(계단오르기).cpp" />
     <ClCompile Include="9095(1,2,3더하기).cpp" />
   </ItemGroup>
