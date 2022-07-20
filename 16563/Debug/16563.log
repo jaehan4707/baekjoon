@@ -1,2 +1,2 @@
-﻿  16563(연습).cpp
-  16563.vcxproj -> C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\백준-알고리즘\Debug\16563.exe
+﻿  16563(진짜).cpp
+C:\Users\이재한\Desktop\이재한\개인공부\백준알고리즘\16563\16563(진짜).cpp(12,5): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
