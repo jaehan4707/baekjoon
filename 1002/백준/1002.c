@@ -9,8 +9,8 @@ int main()
     int x1, y1, x2, y2, r1, r2;
     double distance;
     int sum, difference;
-    int* count;
-    count = (int*)malloc(sizeof(int) * N);
+    int *count;
+    count = (int *)malloc(sizeof(int) * N);
     for (int i = 0; i < N; i++)
     {
         scanf("%d %d %d %d %d %d", &x1, &y1, &r1, &x2, &y2, &r2);

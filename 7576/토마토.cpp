@@ -2,17 +2,17 @@
 #include <vector>
 #include <queue>
 using namespace std;
-void maketomato(int row, int col, vector<vector<int>>& S);
-void pushtomato(queue<pair<int, int>>& q, vector<vector<int>>& S, vector<vector<int>>& day);
+void maketomato(int row, int col, vector<vector<int>> &S);
+void pushtomato(queue<pair<int, int>> &q, vector<vector<int>> &S, vector<vector<int>> &day);
 int m, n, cnt = 0;
 
 int main()
 {
     int max = 0;
     cin >> m >> n;
-    vector<vector<int>>day(n, vector<int>(m, -1)); //2Â÷¿ø ¹è¿­À» -1·Î ÃÊ±âÈ­
-    vector<vector<int>> tomato(n, vector<int>(m, 0)); // n*m¹è¿­¿Ï¼º
-    maketomato(n, m, tomato); //¹è¿­¿¡ °ªÀ» ³Ö¾îÁÜ
+    vector<vector<int>> day(n, vector<int>(m, -1));   // 2ì°¨ì› ë°°ì—´ì„ -1ë¡œ ì´ˆê¸°í™”
+    vector<vector<int>> tomato(n, vector<int>(m, 0)); // n*më°°ì—´ì™„ì„±
+    maketomato(n, m, tomato);                         //ë°°ì—´ì— ê°’ì„ ë„£ì–´ì¤Œ
     queue<pair<int, int>> q;
 
     for (int i = 0; i < n; i++)
@@ -22,7 +22,7 @@ int main()
             if (tomato[i][j] == 1)
             {
                 q.push(make_pair(i, j));
-                day[i][j] = 0; //Ã³À½ºÎÅÍ Åä¸¶Åä°¡ ÀÖ´ø °÷Àº 0ÀÏÂ÷·Î ½ÃÀÛ
+                day[i][j] = 0; //ì²˜ìŒë¶€í„° í† ë§ˆí† ê°€ ìˆë˜ ê³³ì€ 0ì¼ì°¨ë¡œ ì‹œì‘
             }
         }
     }
@@ -39,7 +39,7 @@ int main()
     {
         for (int j = 0; j < m; j++)
         {
-            if (tomato[i][j] == 0) //Åä¸¶Åä°¡ ÀÍÁö ¾Ê´Â °æ¿ì
+            if (tomato[i][j] == 0) //í† ë§ˆí† ê°€ ìµì§€ ì•ŠëŠ” ê²½ìš°
             {
                 max = -1;
             }
@@ -47,43 +47,42 @@ int main()
     }
     cout << max;
 }
-void maketomato(int row, int col, vector<vector<int>>& S)
+void maketomato(int row, int col, vector<vector<int>> &S)
 {
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
         {
             cin >> S[i][j];
-
         }
     }
 }
-void pushtomato(queue<pair<int, int>>& q, vector<vector<int>>& S, vector<vector<int>>& day)
+void pushtomato(queue<pair<int, int>> &q, vector<vector<int>> &S, vector<vector<int>> &day)
 {
     while (!q.empty())
     {
         int row = q.front().first;
         int col = q.front().second;
         q.pop();
-        if (row - 1 >= 0 && S[row - 1][col] == 0 && day[row - 1][col] == -1) //À§
+        if (row - 1 >= 0 && S[row - 1][col] == 0 && day[row - 1][col] == -1) //ìœ„
         {
             day[row - 1][col] = day[row][col] + 1;
             S[row - 1][col] = 1;
             q.push(make_pair(row - 1, col));
         }
-        if (row + 1 < n && S[row + 1][col] == 0 && day[row + 1][col] == -1) //¾Æ·¡
+        if (row + 1 < n && S[row + 1][col] == 0 && day[row + 1][col] == -1) //ì•„ë˜
         {
             day[row + 1][col] = day[row][col] + 1;
             S[row + 1][col] = 1;
             q.push(make_pair(row + 1, col));
         }
-        if (col + 1 < m && S[row][col + 1] == 0 && day[row][col + 1] == -1) //¿À¸¥ÂÊ
+        if (col + 1 < m && S[row][col + 1] == 0 && day[row][col + 1] == -1) //ì˜¤ë¥¸ìª½
         {
             day[row][col + 1] = day[row][col] + 1;
             S[row][col + 1] = 1;
             q.push(make_pair(row, col + 1));
         }
-        if (col - 1 >= 0 && S[row][col - 1] == 0 && day[row][col - 1] == -1) //¿ŞÂÊ
+        if (col - 1 >= 0 && S[row][col - 1] == 0 && day[row][col - 1] == -1) //ì™¼ìª½
         {
             day[row][col - 1] = day[row][col] + 1;
             S[row][col - 1] = 1;

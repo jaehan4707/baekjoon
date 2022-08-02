@@ -1,5 +1,5 @@
-//¹éÁØ 1052¹ø ¹°º´¿Å±â±â
-// K=1 ÀÏ¶§ N=2->0 N=3->1 N=4->
+//ë°±ì¤€ 1052ë²ˆ ë¬¼ë³‘ì˜®ê¸°ê¸°
+// K=1 ì¼ë•Œ N=2->0 N=3->1 N=4->
 #include <iostream>
 #include <vector>
 
@@ -7,8 +7,8 @@ using namespace std;
 
 int main()
 {
-	int n, k, bottle=0, m = 0, result = 0, count = 1,buy;
-	cin >> n >> k; //¹°º´°¹¼ö=n , Â÷ÀÖ´Â ¹°º´ÀÇ °³¼ö=k
+	int n, k, bottle = 0, m = 0, result = 0, count = 1, buy;
+	cin >> n >> k; //ë¬¼ë³‘ê°¯ìˆ˜=n , ì°¨ìˆëŠ” ë¬¼ë³‘ì˜ ê°œìˆ˜=k
 	bottle = n;
 	if (n <= k)
 	{
@@ -18,18 +18,18 @@ int main()
 	{
 		while (result <= k)
 		{
-			if (n % 2 == 0) //Â¦¼ö
-			{
-				n= n / 2;
-				count = count*2; //ÇÕÄ¥¶§¸¶´Ù º´L Å©±â
-				//result = n;
-			}
-			else //È¦¼ö
+			if (n % 2 == 0) //ì§ìˆ˜
 			{
 				n = n / 2;
-				//m = 1;
-				count = count*2;
-				//result = n+ m;
+				count = count * 2; //í•©ì¹ ë•Œë§ˆë‹¤ ë³‘L í¬ê¸°
+								   // result = n;
+			}
+			else //í™€ìˆ˜
+			{
+				n = n / 2;
+				// m = 1;
+				count = count * 2;
+				// result = n+ m;
 			}
 			if (n == 0)
 			{
@@ -37,11 +37,10 @@ int main()
 				n = bottle - count;
 				bottle = n;
 				buy = count - n;
-				result = result+1;
+				result = result + 1;
 				count = 1;
 			}
 		}
 		cout << result;
 	}
-	
 }

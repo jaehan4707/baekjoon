@@ -1,10 +1,9 @@
 /*
-M°ú N»çÀÌÀÇ ¼Ò¼ö¸¦ Ã£¾Æ³»ÀÚ.
-¿¡¶óÅä½ºÅ×³×½ºÀÇ Ã¼ ÀÌ¿ë
-2ÀÇ ¹è¼ö Á¦°Å. 3ÀÇ¹è¼ö Á¦°Å. ¾îµğ±îÁö
-·çÆ® N±îÁö Á¦°Å
-·çÆ® NÀÌ Àı¹İ ³ª‡ÊÀ»¶§ ¸¶Áö¸· ¾à¼ö 
-
+M? N??? ??? ????.
+???????? ? ??
+2? ?? ??. 3??? ??. ????
+?? N?? ??
+?? N? ?? ?‡?? ??? ??
 */
 #include <iostream>
 #include <vector>
@@ -15,28 +14,28 @@ int M, N;
 int main()
 {
 	cin >> M >> N;
-	vector<int>include(N + 1);
+	vector<int> include(N + 1);
 	for (int i = 2; i <= N; i++)
 	{
 		include[i] = 1;
 	}
 	include[1] = 0;
-	for (int i = 2; i<=sqrt(N); i++) //2ºÎÅÍ ·çÆ® N±îÁö °Ë»çÇÔ.
+	for (int i = 2; i <= sqrt(N); i++) // 2?? ?? N?? ???.
 	{
-		if (include[i] == 0) //¸¸¾à ÀÌ¹Ì ¼Ò¼ö°¡ ¾Æ´Ï¶ó°í ÆÇº°³´´Ù¸é °Ë»çÇÒÇÊ¿ä¾øÀ½,
+		if (include[i] == 0) //?? ?? ??? ???? ????? ???????,
 		{
 			continue;
 		}
-		for (int j = i*i; j<=N;j=j+i) //iÀÇ ¹è¼öºÎÅÍ N±îÁö ¹è¼ö¸¦ ½Ï ´ÙÁö¿ò.
+		for (int j = i * i; j <= N; j = j + i) // i? ???? N?? ??? ? ???.
 		{
 			include[j] = 0;
 		}
 	}
-	for (int i = M; i <= N; i++) //MºÎÅÍ N±îÁöÀÇ ¼Ò¼ö¸¦ Ãâ·ÂÇÏ´Âµ¥ ¼Ò¼ö´Â include°ªÀÌ 1ÀÎ°Í.
+	for (int i = M; i <= N; i++) // M?? N??? ??? ????? ??? include?? 1??.
 	{
 		if (include[i] == 1)
 		{
-			cout << i<<"\n";
+			cout << i << "\n";
 		}
 	}
 }

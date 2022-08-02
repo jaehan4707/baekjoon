@@ -1,4 +1,4 @@
-// ¹éÁØ 1339 °ñµå4 ´Ü¾î¼öÇÐ
+// ?? 1339 ??4 ????
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -25,9 +25,9 @@ int main()
         string s;
         cin >> s;
         voca.push_back(s);
-        bulk.push_back(voca[i].size()); //ÀÔ·Â¹ÞÀº ¹®Àð¿­ÀÇ ±æÀÌ¸¦ ¹è¿­¿¡ ÀúÀåÇÔ.
+        bulk.push_back(voca[i].size()); //???? ???? ??? ??? ???.
     }
-    for (int i = 0; i < n; i++) //¹®ÀÚ¿­ÀÇ Å©±â¼ø¼­ ´ë·Î ¹è¿­À» Á¤·Ä.ÀÌ·¯¸é ¹è¿­ÀÇ Ã¹ ¿ø¼Ò°¡ °¡Àå ±ä ¹®ÀÚ¿­ÀÏ°ÅÀÓ.
+    for (int i = 0; i < n; i++) //???? ???? ?? ??? ??.??? ??? ? ??? ?? ? ??????.
     {
         for (int j = i + 1; j < n; j++)
         {
@@ -42,50 +42,50 @@ int main()
     {
         string s = voca[i];
         voca[i].erase();
-        int Size = bulk[0] - bulk[i]; //°¡Àå ±ä ¹®ÀÚ¿­À» ±âÁØÀ¸·Î °¢ ¹®ÀÚ¿­°úÀÇ Â÷ÀÌ¸¸Å­ ºó °ø°£À» ¸¸µé¾îÁÜ.
+        int Size = bulk[0] - bulk[i]; //?? ? ???? ???? ? ????? ???? ? ??? ????.
         // cout<<Size<<endl;
         int idx = 0;
         while (idx != Size)
         {
             // cout<<1<<endl;
-            voca[i] += "a"; //¾Æ¹«¹®ÀÚ³ª ³ÖÀº°ÍÀÓ. ¾îÂ÷ÇÇ ÀÔ·Â¹®ÀÚ´Â ´ë¹®ÀÚ¶ó ¼Ò¹®ÀÚ´Â »ó°ü¾øÀ½!
+            voca[i] += "a"; //????? ????. ??? ????? ???? ???? ????!
             idx++;
         }
-        voca[i] += s; //°ø¹éÀ» Æ÷ÇÔÇÑ ¹®ÀÚ¿­ ¿Ï¼º
+        voca[i] += s; //??? ??? ??? ??
     }
-    int Max_size = voca[0].size(); //°¡Àå ±ä ¹®ÀÚ¿­ÀÇ ±æÀÌ¸¦ º¯¼ö·Î ÀúÀåÇØµÒ. °è¼Ó ÀÔ·ÂÇÏ±â ±ÍÂúÀ½.
+    int Max_size = voca[0].size(); //?? ? ???? ??? ??? ????. ?? ???? ???.
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < Max_size; j++)
         {
             p.push_back(make_pair(pow(10, Max_size - j - 1), voca[i][j]));
-            //°¢ ¹®ÀÚº°·Î À§Ä¡ÇÑ ÀÚ¸®¸¦ 10ÀÇ Áö¼ö·Î ³ªÅ¸³¿. ¿¹¸¦ µé¾î ABCDE¸é A´Â 10ÀÇ 4½Â, B´Â 10ÀÇ 3½Â ÀÌ·¸°Ô..
+            //? ???? ??? ??? 10? ??? ???. ?? ?? ABCDE? A? 10? 4?, B? 10? 3? ???..
         }
     }
     sort(p.begin(), p.end());
-    // pair ÀÇ first´Â ÀÚ¸®¼ö, second´Â¹®ÀÚ
-    // mapÀÇ Ã¹¹ø¤Š´Â ¹®ÀÚ, second´Â ¼ýÀÚ
+    // pair ? first? ???, second???
+    // map? ??Š? ??, second? ??
     for (int i = 0; i < p.size(); i++)
     {
-        if (p[i].second == 'a') //³»°¡ ÀÓ½Ã·Î ¸¸µé¾îÁØ °ø°£ÀÌ¸é ³Ñ¾î°¨.
+        if (p[i].second == 'a') //?? ??? ???? ???? ???.
         {
             continue;
         }
         else
         {
-            if (m.find(p[i].second) == m.end()) //Ã³À½ map¿¡ ³Ö´Â´Ù¸é ±×³É ±× ¹®ÀÚ°¡ °¡Áö´Â ¼ýÀÚ¸¦ ³Ö¾îÁÜ.
+            if (m.find(p[i].second) == m.end()) //?? map? ???? ?? ? ??? ??? ??? ???.
             {
                 m.insert(make_pair(p[i].second, p[i].first));
             }
             else
-            { //Ã£¾Ñ´Ù¸é? ¿ø·¡ ±âÁ¸ÀÇ ¼ýÀÚ¿Í ´õÇØÁÜ. EX) ABBCE ¸é B´Â 1000°ú 100À» ³ªÅ¸³¿. µû¶ó¼­ map¿¡´Â 1100ÀÌ ÀúÀåµÇ¾ßÇÔ.
+            { //????? ?? ??? ??? ???. EX) ABBCE ? B? 1000? 100? ???. ??? map?? 1100? ?????.
                 int value = m.find(p[i].second)->second;
                 m[p[i].second] = value + p[i].first;
             }
         }
     }
     vector<pair<int, char>> result;
-    // result¾È¿¡ °¢ ¹®ÀÚ¿Í ±× ¹®ÀÚ°¡ Ç¥ÇöÇÏ´Â ¼ö¸¦ ³Ö¾îÁÜ. EX) A 10000, B 1010
+    // result?? ? ??? ? ??? ???? ?? ???. EX) A 10000, B 1010
     for (auto iter = m.begin(); iter != m.end(); iter++)
     {
         result.push_back(make_pair(iter->second, iter->first));
@@ -94,21 +94,21 @@ int main()
     {
         for (int j = i + 1; j < result.size(); j++)
         {
-            if (result[i].first < result[j].first) //ÀÚ¸®¼ö°¡ Å« ¼ø¼­´ë·Î Á¤·ÄÇÔ.
+            if (result[i].first < result[j].first) //???? ? ???? ???.
             {
                 swap(result[i], result[j]);
             }
         }
     }
     m.clear();
-    //¹®ÀÚ¿­À» ÀÌÁ¦ ¼ýÀÚ·Î ¸ÅÇÎÇØ¾ßÇÔ.
-    int answer = 9; //°¢ ¾ËÆÄºªÀº 0~9±îÁöÀÇ ¼ýÀÚ¸¦ Ç¥ÇöÇÒ ¼ö ÀÖÀ½. ¿ì¼±¼øÀ§°¡ ³ôÀº ¼ø¼­´ë·Î 9,8,7 ... ÀÌ·¸°Ô ÇÒ´çÇÔ.
+    //???? ?? ??? ?????.
+    int answer = 9; //? ???? 0~9??? ??? ??? ? ??. ????? ?? ???? 9,8,7 ... ??? ???.
     for (int i = 0; i < result.size(); i++)
     {
-        if (m.find(result[i].second) == m.end()) //°¢ ¾ËÆÄºªÀÇ ¼ýÀÚ¸¦ ³Ö¾îÁÜ. 9~0
+        if (m.find(result[i].second) == m.end()) //? ???? ??? ???. 9~0
         {
             m.insert(make_pair(result[i].second, answer));
-            answer--; //ÇÑ¹ø ³Ö¾îÁØ ¼ýÀÚ´Â ¸ø³Ö±â ¶§¹®¿¡ °¨¼Ò½ÃÄÑÁÜ.
+            answer--; //?? ??? ??? ??? ??? ?????.
         }
     }
     for (int i = 0; i < n; i++)
