@@ -41,7 +41,7 @@ int main()
 		cout << Max[Max.size() - 1];
 	}
 }
-int search(vector<vector<int>> &a, int row, int col) //?? ?? ??? ???.
+int search(vector<vector<int>> &a, int row, int col) //한축 잡고 꼭짓점 잡아줌.
 {
 	int edge = a[row][col];
 	int size = 0, len = 0, idx = 0, ans = 0;
