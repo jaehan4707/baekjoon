@@ -25,7 +25,7 @@ int main()
         {
             right = mid - 1;
         }
-        else //midÀÏ¶§ Ã£Àº°Å
+        else //midï¿½Ï¶ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½
         {
             left = mid + 1;
         }

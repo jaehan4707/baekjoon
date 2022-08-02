@@ -15,11 +15,11 @@ int main()
 		scanf("%d %d %d", &Maxrow, &Maxcol, &Obj);
 		if (Maxrow > 50 || Maxrow < 1 || Maxcol < 1 || Obj < 0 || Maxcol > 50 || Obj > 2500)
 			exit(1);
-		memset(ary, 0, sizeof(ary));// ÃÖ´ë °¡·Î±æÀÌ,¼¼·Î±æÀÌ ¹èÃß°³¼ö 
+		memset(ary, 0, sizeof(ary));// ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Î±ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß°ï¿½ï¿½ï¿½ 
 		for (j = 0; j < Obj; j++)
 		{
 			scanf("%d %d", &Row, &Col);
-			ary[Row][Col] = 1; // ¹èÃß ÀÕ´Â °÷Àº 1·Î ÃÊ±âÈ­
+			ary[Row][Col] = 1; // ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´ï¿½ ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½Ê±ï¿½È­
 		}
 		for (k = 0; k < Maxrow; k++)
 		{
