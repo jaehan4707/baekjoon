@@ -1,11 +1,14 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <stack>
+#include <queue>
 using namespace std;
 int n, x, y, N, cnt = 0, answer = -1;
 vector<vector<int>> graph;
 vector<int> visit;
 void dfs(int s);
+vector<int> path;
 int main()
 {
     cin >> n;
@@ -20,12 +23,19 @@ int main()
         graph[c][p] = 1;
         graph[p][c] = 1;
     }
+    // cout<<x<<endl;
     dfs(x);
+    /*
+    for(auto a :path){
+        cout<<a<<" ";
+    }
+    cout<<endl;
+    */
     cout << answer;
 }
-//�θ� ã�ƾ���. �׷��� [x][y]���� x�� �������� ã�ƾ���.
-//������ �������� ã�Ѵٰ� ���������ָ� �ȵ�. ��Ȯȯ �����϶��� �������.
-void dfs(int s)
+//부모를 찾아야함. 그러면 [x][y]에서 x의 연결고리를 찾아야함.
+//무작정 연결고리를 찾앗다고 증가시켜주면 안됨. 정확환 관계일때만 해줘야함.
+void dfs(int s) // s에서 시작해서 f까지 루트를 몇개 만나는지 체크하면 될듯.
 {
     visit[s] = 1;
     if (s == y)
@@ -36,7 +46,8 @@ void dfs(int s)
     cnt++;
     for (int i = 1; i <= n; i++)
     {
-        if (visit[i] == 1) {
+        if (visit[i] == 1)
+        {
             continue;
         }
         if (graph[s][i] == 0)

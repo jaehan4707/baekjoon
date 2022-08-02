@@ -5,10 +5,10 @@ using namespace std;
 int threshold;
 void tromino(vector<vector<int>> &maze, int row, int col);
 void printmaze(vector<vector<int>> &maze);
-void partition(vector<vector<int>> &maze, vector<vector<int>> &maze1, vector<vector<int>> &maze2, vector<vector<int>> &maze3, vector<vector<int>> &maze4); //????? ???
+void partition(vector<vector<int>> &maze, vector<vector<int>> &maze1, vector<vector<int>> &maze2, vector<vector<int>> &maze3, vector<vector<int>> &maze4); //사분면으로 나누기
 void fillmaze(vector<vector<int>> &maze, int row, int col);
 void combine(vector<vector<int>> &maze, vector<vector<int>> &maze1, vector<vector<int>> &maze2, vector<vector<int>> &maze3, vector<vector<int>> &maze4);
-int hole(vector<vector<int>> &maze, int row, int col); // row col? ???? ??
+int hole(vector<vector<int>> &maze, int row, int col); // row col은 구멍있는 위치
 void tile(vector<vector<int>> &maze, int n, int &row, int &col);
 int n, row, col, cnt = 1, H = 0, N = 0;
 
@@ -21,23 +21,23 @@ int main()
     {
         cnt = cnt * 2;
     }
-    vector<vector<int>> maze(cnt, vector<int>(cnt, 0)); // n*n? ??? \1?? ?????
+    vector<vector<int>> maze(cnt, vector<int>(cnt, 0)); // n*n의 배열을 \1으로 초기화시킴
     maze[maze.size() - col][row - 1] = -1;
     tromino(maze, maze.size() - col, row - 1);
     maze[maze.size() - col][row - 1] = -1;
     printmaze(maze);
     return 0;
 }
-void tile(vector<vector<int>> &maze, int n, int &row, int &col) // row col ???? ?
+void tile(vector<vector<int>> &maze, int n, int &row, int &col) // row col 입력받는 값
 {
     int a = 0, b = 0;
     a = row, b = col;
-    b = row - 1; //????? ? col
+    b = row - 1; //원래식으로 된 col
     a = n - col;
     row = a;
     col = b;
 }
-void printmaze(vector<vector<int>> &maze) //????
+void printmaze(vector<vector<int>> &maze) //출력함수
 {
     for (int i = 0; i < maze.size(); i++)
     {
@@ -57,7 +57,7 @@ void printmaze(vector<vector<int>> &maze) //????
         }
     }
 }
-void tromino(vector<vector<int>> &maze, int row, int col) // row col ????
+void tromino(vector<vector<int>> &maze, int row, int col) // row col 구멍좌표
 {
     H++;
     n = maze.size() / 2;
@@ -65,19 +65,19 @@ void tromino(vector<vector<int>> &maze, int row, int col) // row col ????
     int ROW = 0, COL = 0;
     int location = 0;
 
-    vector<vector<int>> maze1(n, vector<int>(n, 0)); // 1???
-    vector<vector<int>> maze2(n, vector<int>(n, 0)); // 2???
-    vector<vector<int>> maze3(n, vector<int>(n, 0)); // 3???
-    vector<vector<int>> maze4(n, vector<int>(n, 0)); // 4???
+    vector<vector<int>> maze1(n, vector<int>(n, 0)); // 1사분면
+    vector<vector<int>> maze2(n, vector<int>(n, 0)); // 2사분면
+    vector<vector<int>> maze3(n, vector<int>(n, 0)); // 3사분면
+    vector<vector<int>> maze4(n, vector<int>(n, 0)); // 4사분면
     if (n <= 1)
     {
         fillmaze(maze, row, col);
     }
     else
     {
-        partition(maze, maze1, maze2, maze3, maze4); //??4?? ???? 4? ?????.
-        location = hole(maze, row, col);             //???? ??? ??? ?? 5,5  size=8
-        if (location == 1)                           // 1???? ???
+        partition(maze, maze1, maze2, maze3, maze4); //배열4개를 큰배열로 4개 할당시켜줌.
+        location = hole(maze, row, col);             //구멍뚫린 사분면 위치가 나옴 5,5  size=8
+        if (location == 1)                           // 1사분면에 있다면
         {
             maze2[maze2.size() - 1][0] = H;
             maze3[0][maze3.size() - 1] = H;
@@ -94,9 +94,9 @@ void tromino(vector<vector<int>> &maze, int row, int col) // row col ????
 
             maze3[0][maze3.size() - 1] = H;
             maze4[0][0] = H;
-            //????
+            //가짜구멍
             tromino(maze1, maze1.size() - 1, maze1.size() - 1);
-            tromino(maze2, row, col - maze2.size()); //????
+            tromino(maze2, row, col - maze2.size()); //진짜구멍
             tromino(maze3, 0, maze3.size() - 1);
             tromino(maze4, 0, 0);
         }
@@ -123,14 +123,14 @@ void tromino(vector<vector<int>> &maze, int row, int col) // row col ????
             tromino(maze3, 0, maze3.size() - 1);
             tromino(maze4, row - maze4.size(), col - maze4.size());
         }
-        combine(maze, maze1, maze2, maze3, maze4); // combine if? ??? ??? ?????
+        combine(maze, maze1, maze2, maze3, maze4); // combine if문 나가고 있는게 나아ㅡㄹ듯
     }
 }
-int hole(vector<vector<int>> &maze, int row, int col) // row col? ???? ?? row1 col 2 size=4
+int hole(vector<vector<int>> &maze, int row, int col) // row col은 구멍있는 위치 row1 col 2 size=4
 {
     int size;
     size = maze.size();
-    if (row < size / 2 && col < size / 2) //??? 1???? ??
+    if (row < size / 2 && col < size / 2) //구멍이 1사분면에 있다
     {
         return 1;
     }
@@ -161,9 +161,9 @@ void combine(vector<vector<int>> &maze, vector<vector<int>> &maze1, vector<vecto
         }
     }
 }
-void partition(vector<vector<int>> &maze, vector<vector<int>> &maze1, vector<vector<int>> &maze2, vector<vector<int>> &maze3, vector<vector<int>> &maze4) //????? ???
+void partition(vector<vector<int>> &maze, vector<vector<int>> &maze1, vector<vector<int>> &maze2, vector<vector<int>> &maze3, vector<vector<int>> &maze4) //사분면으로 나누기
 {
-    int m = maze.size() / 2; // 2??n??
+    int m = maze.size() / 2; // 2분의n까지
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < m; j++)
@@ -175,14 +175,14 @@ void partition(vector<vector<int>> &maze, vector<vector<int>> &maze1, vector<vec
         }
     }
 }
-void fillmaze(vector<vector<int>> &maze, int row, int col) // row,col? ?? 0,1
+void fillmaze(vector<vector<int>> &maze, int row, int col) // row,col은 구멍 0,1
 {
     N = H;
     for (int i = 0; i < maze.size(); i++)
     {
         for (int j = 0; j < maze.size(); j++)
         {
-            //?????? ????? h? ?Z? H==1
+            //가짜구멍일때 가짜구멍은 h로 해줫음 H==1
             if (i == row && j == col)
             {
                 continue;

@@ -15,11 +15,11 @@ int main()
 		scanf("%d %d %d", &Maxrow, &Maxcol, &Obj);
 		if (Maxrow > 50 || Maxrow < 1 || Maxcol < 1 || Obj < 0 || Maxcol > 50 || Obj > 2500)
 			exit(1);
-		memset(ary, 0, sizeof(ary));// ìµœëŒ€ ê°€ë¡œê¸¸ì´,ì„¸ë¡œê¸¸ì´ ë°°ì¶”ê°œìˆ˜ 
+		memset(ary, 0, sizeof(ary)); // ÃÖ´ë °¡·Î±æÀÌ,¼¼·Î±æÀÌ ¹èÃß°³¼ö
 		for (j = 0; j < Obj; j++)
 		{
 			scanf("%d %d", &Row, &Col);
-			ary[Row][Col] = 1; // ë°°ì¶” ì‡ëŠ” ê³³ì€ 1ë¡œ ì´ˆê¸°í™”
+			ary[Row][Col] = 1; // ¹èÃß ÀÕ´Â °÷Àº 1·Î ÃÊ±âÈ­
 		}
 		for (k = 0; k < Maxrow; k++)
 		{
@@ -38,22 +38,24 @@ int main()
 	return 0;
 }
 
-
-int dfs(int x, int y) {
+int dfs(int x, int y)
+{
 
 	ary[x][y] = 0;
 	if (x + 1 < Maxrow && ary[x + 1][y] == 1)
-	{ //down
+	{ // down
 		dfs(x + 1, y);
 	}
 	if (x - 1 >= 0 && ary[x - 1][y] == 1)
-	{ //up 
+	{ // up
 		dfs(x - 1, y);
 	}
-	if (y + 1 < Maxcol && ary[x][y + 1] == 1) { //right
+	if (y + 1 < Maxcol && ary[x][y + 1] == 1)
+	{ // right
 		dfs(x, y + 1);
 	}
-	if (y - 1 >= 0 && ary[x][y - 1] == 1) { //left
+	if (y - 1 >= 0 && ary[x][y - 1] == 1)
+	{ // left
 		dfs(x, y - 1);
 	}
 	return 0;
