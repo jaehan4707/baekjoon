@@ -49,7 +49,7 @@ int main()
 void tom()
 {
     while (!Tomato.empty())
-    { // tomato가 완전히 빌떄까지 반복한다.
+    { // tomato가 완전히 빌??까지 반복한다.
         //첫번째를 선택함.
         int xx = Tomato.front().first;  // x,y좌표 합쳐놓은거 i*m+j
         int zz = Tomato.front().second; // z좌표
@@ -95,5 +95,7 @@ void tom()
             }
         }
     }
-    cout << day << endl;
+    cout<<"가나다라마바사";
+        cout << day << endl;
+    cout<<"가나다라마바사";
 }
