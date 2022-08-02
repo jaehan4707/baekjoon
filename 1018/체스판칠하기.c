@@ -10,13 +10,13 @@ int compare(int r, int c) {
 	for (int i = 0; i < 8; ++i) {
 		for (int j = 0; j < 8; ++j) {
 			if (w_board[i][j] != arr[r + i][c + j])
-				w_cnt++; // ´Ù¸£¸é Ã¼Å©
+				w_cnt++; // ë‹¤ë¥´ë©´ ì²´í¬
 			if (b_board[i][j] != arr[r + i][c + j])
-				b_cnt++; // ´Ù¸£¸é Ã¼Å©
+				b_cnt++; // ë‹¤ë¥´ë©´ ì²´í¬
 		}
 	}
 	if (w_cnt <= b_cnt)
-		return w_cnt; // ´õ ÀÛÀº ¼ö·Î ¸®ÅÏ
+		return w_cnt; // ë” ì‘ì€ ìˆ˜ë¡œ ë¦¬í„´
 	else return b_cnt;
 }
 
@@ -26,11 +26,11 @@ int main() {
 	int b_cnt = 0, w_cnt = 0;
 	scanf("%d %d", &N, &M);
 	for (int i = 0; i < N; i++)
-		scanf("%s", arr[i]); // Ã¼½ºÆÇ ÀÔ·Â¹ŞÀ½
+		scanf("%s", arr[i]); // ì²´ìŠ¤íŒ ì…ë ¥ë°›ìŒ
 
 	for (int i = 0; i <= N - 8; i++) {
-		for (int j = 0; j <= M - 8; j++)  // 8*8·Î Àß¶ó³»¾ß ÇÏ±â ¶§¹®¿¡
-			if (result > compare(i, j)) // ´õ ÀÛÀ» ¶§¸¶´Ù result¿¡ ÀúÀå
+		for (int j = 0; j <= M - 8; j++)  // 8*8ë¡œ ì˜ë¼ë‚´ì•¼ í•˜ê¸° ë•Œë¬¸ì—
+			if (result > compare(i, j)) // ë” ì‘ì„ ë•Œë§ˆë‹¤ resultì— ì €ì¥
 				result = compare(i, j);
 	}
 	printf("%d", result);

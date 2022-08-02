@@ -1,31 +1,79 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int Maxrow, Maxcol;
+int dfs(int x, int y);
+int ary[50][50];
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    int N, n; // N¿∫ ºˆ¿«∞≥ºˆ, n¿∫ ∞¢ ºˆ
-    cin >> N;
-   
-    int S[10001] = { 0 };
-    for (int i = 1; i <= N; i++)
-    {
-        cin >> n;
-        S[n]++;
-    }
-    
-    for (int i = 1; i < 10001; i++)
-    {
-        if (S[i] != 0)
-        {
-            for (int j = 0; j < S[i]; j++)
-            {
-                cout << i << "\n";
-            }
-        }
-    }
-    return 0;
+	int i, j, k, h;
+	int t = 0, Obj = 0, Row = 0, Col = 0, count = 0;
+	scanf("%d", &t);
+	for (i = 0; i < t; i++)
+	{
+		scanf("%d %d %d", &Maxrow, &Maxcol, &Obj);
+		if (Maxrow > 50 || Maxrow < 1 || Maxcol < 1 || Obj < 0 || Maxcol > 50 || Obj > 2500)
+			exit(1);
+		memset(ary, 0, sizeof(ary));// ÏµúÎåÄ Í∞ÄÎ°úÍ∏∏Ïù¥,ÏÑ∏Î°úÍ∏∏Ïù¥ Î∞∞Ï∂îÍ∞úÏàò 
+		for (j = 0; j < Obj; j++)
+		{
+			scanf("%d %d", &Row, &Col);
+			ary[Row][Col] = 1; // Î∞∞Ï∂î ÏûáÎäî Í≥≥ÏùÄ 1Î°ú Ï¥àÍ∏∞Ìôî
+		}
+		for (k = 0; k < Maxrow; k++)
+		{
+			for (h = 0; h < Maxcol; h++)
+			{
+				if (ary[k][h] == 1)
+				{
+					dfs(k, h);
+					count++;
+				}
+			}
+		}
+		printf("%d\n", count);
+		count = 0;
+	}
+	return 0;
 }
+
+
+int dfs(int x, int y) {
+
+	ary[x][y] = 0;
+	if (x + 1 < Maxrow && ary[x + 1][y] == 1)
+	{ //down
+		dfs(x + 1, y);
+	}
+	if (x - 1 >= 0 && ary[x - 1][y] == 1)
+	{ //up 
+		dfs(x - 1, y);
+	}
+	if (y + 1 < Maxcol && ary[x][y + 1] == 1) { //right
+		dfs(x, y + 1);
+	}
+	if (y - 1 >= 0 && ary[x][y - 1] == 1) { //left
+		dfs(x, y - 1);
+	}
+	return 0;
+}
+
+/*int dfs(int x, int y) {
+	ary[x][y] = 0;
+	if (x + 1 < Maxrow && ary[x + 1][y] == 1) //Down
+	{
+		dfs(x + 1, y);
+	}
+	if (x - 1 >= 0 && ary[x - 1][y] == 1) // Up
+	{
+		dfs(x - 1, y);
+	}
+	if (y + 1 < Maxcol && ary[x][y + 1] == 1) { //Right
+		dfs(x, y + 1);
+	}
+	if (y - 1 >= 0 && ary[x][y - 1] == 1) { //Left
+		dfs(x, y - 1);
+	}
+	return 0;
+}*/
