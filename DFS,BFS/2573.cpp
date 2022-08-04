@@ -111,7 +111,6 @@ void checkice(int row, int col)
             {
                 continue;
             }
-
             if (ice[dx][dy] != 0 && fact[dx][dy] == 0)
             { //빙산이 있다.
                 checkice(dx, dy);
