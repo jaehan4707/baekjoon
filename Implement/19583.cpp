@@ -8,7 +8,6 @@
 #include <sstream>
 using namespace std;
 string S, E, Q;
-pair<string, int> p;
 map<string, int> m;
 int main()
 {
@@ -19,11 +18,10 @@ int main()
     int e = E[0] * 600 + E[1] * 60 + E[3] * 10 + E[4];
     int q = Q[0] * 600 + Q[1] * 60 + Q[3] * 10 + Q[4];
     int cnt = 0;
-    while (cin.eof() == false)
+    while (1)
     {
         string Time, name;
         cin >> Time >> name;
-
         if (Time == "" && name == "")
             break;
         int t;
