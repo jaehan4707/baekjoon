@@ -17,7 +17,7 @@ int main()
     {
         string str;
         cin >> str;
-        if (str.length() == 1)
+        if (str.length() == 1) //1이면 무조건 접을 수 있음.
         {
             cout << "YES" << endl;
             continue;
