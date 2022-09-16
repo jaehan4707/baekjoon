@@ -31,7 +31,8 @@ int main()
         afterR = nowR + x[move];      //이동한 x좌표.
         afterC = nowC + y[move];      //이동한 y좌표
         int temp = g[afterR][afterC]; //이동한 자리에 있던 모래
-        g[afterR][afterC] = csand; //이동한 자리에 있던 모래를 기존의 모래로 채운다.
+        g[afterR][afterC]=0;
+        //g[afterR][afterC] = csand; //이동한 자리에 있던 모래를 기존의 모래로 채운다.
         int sum = 0; //모래의 양
         if (move == 0)
         { //왼쪽으로 1칸
@@ -67,7 +68,7 @@ int main()
                 sum += temp * z[k];
                 sum += temp * z[k];
             }
-
+            
             location(afterR, afterC + 2, temp, 3);
             location(afterR, afterC - 2, temp, 3);
             location(nowR + 3 * x[move], nowC + 3 * y[move], temp, 4);
@@ -149,6 +150,7 @@ int main()
             step = 0;
         }
     }
+    
     cout << out; //빠져나간 모래의 양
 }
 void location(int a, int b, int temp, int k)
