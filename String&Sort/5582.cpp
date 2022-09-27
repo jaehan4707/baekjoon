@@ -1,33 +1,29 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <string.h>
 
 using namespace std;
-vector<int> a(8, 0);
-int main(void)
+string str1, str2;
+int answer = 0;
+vector<vector<int>> dp;
+int main()
 {
-    int n, x;
-    cin >> n >> x;
+    //문자열 2개 선언
+    cin >> str1 >> str2; //문자열 2개 입력받기
+    int size = str1.length(), Size = str2.length();
+    dp.resize(size + 1, vector<int>(Size + 1, 0)); // 2차원 배열 초기화.
+    for (int i = 1; i <= size; i++)
+    {
+        for (int j = 1; j <= Size; j++)
+        {
+            if (str1[i - 1] == str2[j - 1]) //문자열이 같아요
+            {
+                dp[i][j] = dp[i - 1][j - 1] + 1;
+            }
+            answer = max(answer, dp[i][j]);
+        }
+    }
 
-    for (int i = 0; i < 8; i++)
-    {
-        if (n & 1 == 1)
-        {
-            a[i] = 1;
-        }
-        else
-        {
-            a[i] = 0;
-        }
-    }
-    if (x == 0)
-    {
-        cout<<a[7];
-    }
-    else if(x==31){
-        cout<<a[0];
-    }
-    else{
-        cout<<a[x-1];
-    }
-    return 0;
+    cout << answer;
 }
