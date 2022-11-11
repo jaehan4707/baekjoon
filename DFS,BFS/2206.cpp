@@ -7,22 +7,18 @@
 #include <algorithm>
 #include <queue>
 using namespace std;
-int n, m, c = 0, result, Max = 0;
+int n, m;
 vector<vector<int>> graph;
 vector<vector<vector<int>>> visit; //3차원 배열
 queue<pair<pair<int, int>,int>> q;
 vector<int> x = {-1, 1, 0, 0};
 vector<int> y = {0, 0, -1, 1};
-bool flag = true; //벽을 깻냐 안깻냐를 뜻함.
-bool arrive = false;
 int bfs();
-void gowall(int ax, int ay);
 int main()
 {
     cin >> n >> m;
     graph.resize(n + 1, vector<int>(m + 1, 0));
     visit.resize(n + 1, vector<vector<int>>(m + 1,vector<int>(2,0)));
-    //vInt.assign(4, vector < vector <int> >(4, vector <int>(4, 0)));
     for (int i = 1; i <= n; i++)
     {
         for (int j = 1; j <= m; j++)
