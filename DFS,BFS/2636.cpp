@@ -53,8 +53,6 @@ int main()
         { // queue 초기화.
             q.pop();
         }
-        // vector<vector<int>>visit;
-        // visit.resize(n, vector<int>(m, 2)); //visit 배열 초기화가 안되어잇노
         visit.assign(n, vector<int>(m, 2));
         for (int i = 0; i < n; i++)
         { // visit 배열에서 치즈 위치를 queue에 넣고, 치즈 위치를 visit에서 0으로 초기화
@@ -69,12 +67,11 @@ int main()
                 }
             }
         }
-        // q에다가 치즈를 넣어줘야하고, 치즈가 있는 곳을 초기호ㅓ 시켜줘야함.
     }
-    cout << t << endl;
-    cout << result;
+    cout << t << endl; //다 녹인 시점 전에 시간을 출력
+    cout << result;   //그 시간대에 치즈 조각들을 출력
 }
-bool check()
+bool check()  //배열에서 치즈가 다 녹았는지 안녹았는지 체크를 해줌.
 {
     for (int i = 0; i < n; i++)
     {
@@ -88,7 +85,7 @@ bool check()
     }
     return true;
 }
-void outside_air()
+void outside_air() //외부 공기를 솎아 내는 작업
 {
     queue<pair<int, int>> out;
     out.push(make_pair(0, 0)); //초기 좌표 넣어줌.
