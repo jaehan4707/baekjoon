@@ -52,7 +52,8 @@ void dfs(int x, int fx)
     dfs(x, graph[fx]);
     if (check) //만약 dfs를 탈출했을때 check가 true라면,  두 좌표는 조합이 일치하기 때문에 넣어줌.
     {
-        m.insert(make_pair(fx, 0));
-        m.insert(make_pair(graph[fx], 0));
+        //m.insert(make_pair(fx, 0));
+        //m.insert(make_pair(graph[fx], 0));
+        m.insert(make_pair(x,0));
     }
 }
