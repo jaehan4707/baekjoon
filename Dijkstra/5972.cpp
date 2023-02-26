@@ -18,6 +18,7 @@ int main()
     cin >> n >> m; // n : 정점 , m : 간선 개수
     int a, b, c;
     //test용도
+    //test2
     dist.resize(n+1,INT_MAX);
     for (int i = 0; i < m; i++)
     {
